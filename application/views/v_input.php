@@ -10,40 +10,56 @@
 <body>
 	<?php echo validation_errors('<div style="color:red">','</div>') ?>
 	
-	<div class="container">
-		<div class="panel panel-default">
-				<div class="panel-heading"><b>Tambah</b></div>
-	
-					<?php echo form_open('index.php/crud/tambah_aksi') ?>
-						<table style="margin:20px auto;">
-							<tr>
-								<td>nis</td>
-								<td><input type="text" name="nis" class="form-control" ></td>
-								<br>
-							</tr>
-							<tr>
-								<td>nama</td>
-								<td><input type="text" name="nama" class="form-control"></td>
-							</tr>
-							<tr><center><?php
-								echo "<p><label for='mapel'>mapel: </label>";
-										echo "<select name='mapel' id='mapel' class='form-control'>";
-										if (count($mapel)) {
-										    foreach ($mapel as $list) {
-										        echo "<option value='". $list['nm_mapel'] . "'>" . $list['nm_mapel'] . "</option>";
-										    }
-										}
-										echo "</select><br/>";
-								?>
-								</center>
-							</tr>
-							<tr>
-								<td></td>
-								<td><input type="submit" value="Tambah" class="btn btn-primary"></td>
-							</tr>
-						</table>
-					</form>	
-		</div>
-	</div>
+	<div class="modal fade" id="modal_form" role="dialog">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h3 class="modal-title">Form Contoh tambah/edit Data Mahasiswa</h3>
+            </div>
+            <div class="modal-body form">
+                <form action="#" id="form" class="form-horizontal">
+                    <input type="hidden" value="" name="id"/> 
+                    <div class="form-body">
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Keterangan</label>
+                            <div class="col-md-9">
+                                <input name="ket" placeholder="Keterangan" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Debet (Rp)</label>
+                            <div class="col-md-9">
+                                <input name="debet" placeholder="Jumlah Pendapatan" class="form-control" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Kredit (Rp)</label>
+                            <div class="col-md-9">
+                                <textarea name="kredit" placeholder="Masukan Jumlah pengeluaran" class="form-control"></textarea>
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label col-md-3">Tanggal Transaksi</label>
+                            <div class="col-md-9">
+                                <input name="tgl" placeholder="yyyy-mm-dd" class="form-control datepicker" type="text">
+                                <span class="help-block"></span>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="btnSave" onclick="save()" class="btn btn-primary">Simpan</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+<!-- End Bootstrap modal -->
 </body>
 </html>

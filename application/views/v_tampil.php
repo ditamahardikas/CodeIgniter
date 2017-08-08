@@ -9,7 +9,7 @@
 <body>
 <div class="container">
 	<div class="panel panel-default">
-	<div class="panel-heading"><b>Tampil CRUD Mahasiswa</b></div>
+	<div class="panel-heading"><b>Tampil</b></div>
 	<br>
 		<?php print 'input nama : ';?>
 		<br>

@@ -17,7 +17,7 @@
 <body>
 <div class="container">
 	<div class="panel panel-default">
-	<div class="panel-heading"><b>Tampil CRUD mapel</b></div>
+	<div class="panel-heading"><b>Tampil  mapel</b></div>
 
 	<form action="<?php echo site_url('crud/delete_multiple'); ?>" method="post">
 		<select name="action">
